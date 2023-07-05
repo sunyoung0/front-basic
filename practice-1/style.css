@@ -34,7 +34,17 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
+#main {
+	background-image: url(/practice-1/asset/background.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
 
+	display: flex;
+
+	padding: 100px 120px 150px;
+	height : calc(100vh - 64px);
+}
 .header-logo {
 	display: flex;
 
@@ -74,3 +84,52 @@ body {
 	cursor: pointer;
 }
 
+.main-left-container {
+	/* flex : grow shrink basis */
+	/* flex : 7 7 auto */
+	flex: 7;
+
+	/* 수직 수평 정렬 */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-left-icon {
+	background-image: url(/practice-1/asset/main_logo.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+
+	width: 50px;
+	height: 50px;
+}
+.main-left-text-box {
+	margin-top: 20px;
+}
+
+.main-left-text {
+	color: #ffffff;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 140%;
+	letter-spacing: -1.2px;
+	text-align: center;
+}
+
+.main-right-container {
+	flex: 5;
+}
+
+.main-right-card {
+	background-color: white;
+
+	border-radius: 10px;
+	padding: 50px 50px 30px;
+	height: calc(100% - 80px);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
