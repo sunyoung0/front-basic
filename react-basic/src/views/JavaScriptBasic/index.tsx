@@ -137,7 +137,7 @@ function JavaScriptBasic() {
 	});			// [1, 4, 9, 16, 25]
 
 	// filter 함수 : 배열.filter(조건문을 가진 함수)
-	//							 배열을 반보갛면서 함수에 작성된 조건문에 부합하는 요소만 반환
+	//							 배열을 반복하면서 함수에 작성된 조건문에 부합하는 요소만 반환
 	resultList = numbers.filter(function(item){
 		return item % 2 === 0;
 	});		// [2, 4]
