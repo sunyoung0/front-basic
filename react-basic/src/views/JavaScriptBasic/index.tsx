@@ -194,7 +194,24 @@ function JavaScriptBasic() {
 	let { address, ...other } = object1;	// address를 가져오고 other은 새로운 객체를 만듦
 	// address: '부산', ohter: {name : '홍길동', age : 30}
 
-	
+	let object3 = {telNumber: '010-1111-1111', email: 'email@email.com'}
+	let subObject = {...object2, ...object3};
+	// {name: '고길동', age=50, address='인천광역시'}
+
+	// 함수
+
+	// 함수 뒤에 반환타입이 없는 것 -> 일회성 함수 , 재사용 불가
+	// function 함수명 (매개변수:타입, ..): 반환타입 {
+	// ...
+	// return 결과값;
+	// }
+
+	// 화살표 함수
+	// 함수를 변수처럼 사용하는 것
+	// 선언 방법
+	// const 함수명 = (매개변수, ... ) => { ... return 결과값 };
+
+
 	return (<></>);
 
 }
