@@ -1,3 +1,5 @@
+import { NumberLiteralType } from "typescript";
+
 function JavaScriptBasic() {
 
 	// 주석 //
@@ -105,6 +107,94 @@ function JavaScriptBasic() {
 	result = number1 != number2;	// false
 	result = number1 !== number2;	// true
 
+	// 조건문
+	// 조건문의 조건이 무조건 true, false 형태의 boolean 값이 오지 않아도 됨
+	// false : 0, 0.0, '' , undefined, null
+	const string = '';
+	if(string) {
+
+	}
+
+	// 반복문
+	// for, while 모두 사용 가능
+
+	// foreach 함수
+	const exampleArray = ['apple', 'banana', 'carot'];
+	// foreach 함수 : 배열.forEach(반환값이 없는 함수);
+	// for (let item: exampleArray) {
+	// 반복문이 없음
+	// }
+	exampleArray.forEach(function(item){
+		console.log(item);
+	});
+
+	// map 함수 : 배열.map(반환값이 있는 함수); 자주 사용됨
+	//						배열을 반복하면서 함수 작업의 반환 값으로 새로운 배열을 생성하여 반환
+	const numbers = [1, 2, 3, 4, 5];
+	let resultList = numbers.map(function (item){
+		const result = item * item;
+		return result;
+	});			// [1, 4, 9, 16, 25]
+
+	// filter 함수 : 배열.filter(조건문을 가진 함수)
+	//							 배열을 반보갛면서 함수에 작성된 조건문에 부합하는 요소만 반환
+	resultList = numbers.filter(function(item){
+		return item % 2 === 0;
+	});		// [2, 4]
+
+	// 객체 생성
+	// 1. JSON 형식을 이용하여 생성(바로 생성)
+	// JSON : { 'key': 'value', 'key': 'value', ... } 문자열임
+	let object1 = {
+		name:"홍길동",
+		age: 29,
+		address: "부산광역시"
+	};
+
+	// 2. class를 이용하여 생성, 클래스 선언 : class 클래스명 {...}
+	//	생성자를 그냥 constructor로 만듦 오버라이드 개념이 없음
+	class CHuman {
+		// 타입 스크립트 기반일 때는 각각의 멤버에 대한 타입을 지정해줘야함
+		name: string
+		age: number;
+		address: string;
+
+		constructor(name:string, age: number, address:string) {
+			this.name = name;
+			this.age = age;
+			this.address = address;
+		}
+	}
+	object1 = new CHuman('김철수', 30, '서울특별시');
+
+	// 3. interface를 이용하여 생성
+	// 객체의 틀만 잡아줌
+	interface IHuman {
+		name: string;
+		age: number;
+		address: string;
+	}
+
+	let object2: IHuman = {
+		name: '고길동',
+		age: 50,
+		address:"인천광역시"
+	}
+
+	object1.age;
+	
+	// 구조 분해 할당
+	// let name = object1.name;	// 자바 문법
+	// let age = object1.age;
+
+	let { name, age } = object1;	//{ name : '홍길동', age : 30, address : '부산'}
+	console.log(name);
+	console.log(age);
+
+	let { address, ...other } = object1;	// address를 가져오고 other은 새로운 객체를 만듦
+	// address: '부산', ohter: {name : '홍길동', age : 30}
+
+	
 	return (<></>);
 
 }
