@@ -4,9 +4,11 @@
 // 관리를 용이하게 해줌
 // class 컴포넌트 / function 컴포넌트
 
+// 인터페이스의 객체의 타입을 정의해놓은 것
+// 속성명? : 타입; 필수가 아니라고 표시하는 것
 interface Props {
 	arg1: string;
-	arg2: number;
+	arg2?: number;
 }
 
 // 컴포넌트 선언시 주의 사항
@@ -15,11 +17,11 @@ interface Props {
 function TestComponent (props: Props) {
 	
 	const itemList = ['첫번째', '두번째', '세번째', '네번째', '다섯번째'];
-	const flag = false;
+	const flag = true;
 
 	// return 위치에 화면에 출력할 HTML 작성
 	// 컴포넌트 return 시 주의사항
-	// 반드시 하나의 요소만 반환
+	// 반드시 하나의 요소를 반환
 
 	// return에 작성하는 HTML 내부에서 Javascript를 사용하고 싶으면
 	// {} 내부에 작성
@@ -32,10 +34,9 @@ function TestComponent (props: Props) {
 			{ /* 주석, 부모요소 밖에서는 안됨 */ }
 			{ itemList.map((item) => (<div>	{item}컴포넌트입니다. </div>)) }
 			{
-				// if 문을 사용할 수 없음
-				// if(flag) {
-				// 	return ( <div> TRUE </div>)
-				// }
+				flag && (<div>TRUE</div>)
+			}
+			{
 				flag ? (<div>TRUE</div>) : (<div>FALSE</div>)
 			}
 		</div>

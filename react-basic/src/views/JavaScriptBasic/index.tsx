@@ -196,7 +196,7 @@ function JavaScriptBasic() {
 
 	let object3 = {telNumber: '010-1111-1111', email: 'email@email.com'}
 	let subObject = {...object2, ...object3};
-	// {name: '고길동', age=50, address='인천광역시'}
+	// {name: '고길동', age=50, address='인천광역시', telNumber: '010-1111-1111', email: 'email@email.com'}
 
 	// 함수
 
